@@ -367,8 +367,8 @@ tenants:
             - wan
             enabled: true
             ip_subnet: 10.3.50.1/24
-inventory_file: /Users/tgrimonet/Projects/arista-community/ansible-avd-cloudvision-demo/inventory/inventory.yml
-inventory_dir: /Users/tgrimonet/Projects/arista-community/ansible-avd-cloudvision-demo/inventory
+inventory_file: /Users/marsmith/git_projects/ansible-avd-cloudvision-demo/inventory/inventory.yml
+inventory_dir: /Users/marsmith/git_projects/ansible-avd-cloudvision-demo/inventory
 ansible_host: 10.255.0.14
 inventory_hostname: DC1-LEAF1B
 inventory_hostname_short: DC1-LEAF1B
@@ -392,24 +392,24 @@ ansible_facts:
     uplink_type: p2p
     vtep: true
     ip_addressing:
-      router_id: designs/l3ls-evpn/ip-addressing/router-id.j2
-      mlag_ip_primary: designs/l3ls-evpn/ip-addressing/mlag-ip-primary.j2
-      mlag_ip_secondary: designs/l3ls-evpn/ip-addressing/mlag-ip-secondary.j2
-      mlag_l3_ip_primary: designs/l3ls-evpn/ip-addressing/mlag-l3-ip-primary.j2
-      mlag_l3_ip_secondary: designs/l3ls-evpn/ip-addressing/mlag-l3-ip-secondary.j2
-      p2p_uplinks_ip: designs/l3ls-evpn/ip-addressing/p2p-uplinks-ip.j2
-      p2p_uplinks_peer_ip: designs/l3ls-evpn/ip-addressing/p2p-uplinks-peer-ip.j2
-      vtep_ip_mlag: designs/l3ls-evpn/ip-addressing/vtep-ip-mlag.j2
-      vtep_ip: designs/l3ls-evpn/ip-addressing/vtep-ip.j2
+      router_id: ip_addressing/router-id.j2
+      mlag_ip_primary: ip_addressing/mlag-ip-primary.j2
+      mlag_ip_secondary: ip_addressing/mlag-ip-secondary.j2
+      mlag_l3_ip_primary: ip_addressing/mlag-l3-ip-primary.j2
+      mlag_l3_ip_secondary: ip_addressing/mlag-l3-ip-secondary.j2
+      p2p_uplinks_ip: ip_addressing/p2p-uplinks-ip.j2
+      p2p_uplinks_peer_ip: ip_addressing/p2p-uplinks-peer-ip.j2
+      vtep_ip_mlag: ip_addressing/vtep-ip-mlag.j2
+      vtep_ip: ip_addressing/vtep-ip.j2
     interface_descriptions:
-      underlay_ethernet_interfaces: designs/l3ls-evpn/interface-descriptions/underlay/ethernet-interfaces.j2
-      underlay_port_channel_interfaces: designs/l3ls-evpn/interface-descriptions/underlay/port-channel-interfaces.j2
-      connected_endpoints_ethernet_interfaces: designs/l3ls-evpn/interface-descriptions/connected-endpoints/ethernet-interfaces.j2
-      connected_endpoints_port_channel_interfaces: designs/l3ls-evpn/interface-descriptions/connected-endpoints/port-channel-interfaces.j2
-      overlay_loopback_interface: designs/l3ls-evpn/interface-descriptions/loopback-interfaces/overlay-loopback.j2
-      vtep_loopback_interface: designs/l3ls-evpn/interface-descriptions/loopback-interfaces/vtep-loopback.j2
-    underlay_routing_protocol: ebgp
-    overlay_routing_protocol: ebgp
+      underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
+      underlay_port_channel_interfaces: interface_descriptions/underlay/port-channel-interfaces.j2
+      mlag_ethernet_interfaces: interface_descriptions/mlag/ethernet-interfaces.j2
+      mlag_port_channel_interfaces: interface_descriptions/mlag/port-channel-interfaces.j2
+      connected_endpoints_ethernet_interfaces: interface_descriptions/connected_endpoints/ethernet-interfaces.j2
+      connected_endpoints_port_channel_interfaces: interface_descriptions/connected_endpoints/port-channel-interfaces.j2
+      overlay_loopback_interface: interface_descriptions/loopback_interfaces/overlay-loopback.j2
+      vtep_loopback_interface: interface_descriptions/loopback_interfaces/vtep-loopback.j2
     group: DC1_LEAF1
     id: 2
     mgmt_ip: 10.255.0.14/24
@@ -422,6 +422,9 @@ ansible_facts:
         non_mlag: 330
       feature_support:
         queue_monitor_length_notify: false
+    mgmt_interface: Management1
+    underlay_routing_protocol: ebgp
+    overlay_routing_protocol: ebgp
     filter_tenants:
     - all
     filter_tags:
@@ -459,6 +462,7 @@ ansible_facts:
     mlag_group: DC1_LEAF1
     mlag_ibgp_origin_incomplete: true
     mlag_peer_vlan: 4094
+    mlag_peer_link_allowed_vlans: 2-4094
     mlag_dual_primary_detection: false
     mlag_interfaces:
     - Ethernet3
@@ -475,7 +479,6 @@ ansible_facts:
     vtep_loopback_ipv4_pool: 192.168.254.0/24
     vtep_loopback: Loopback1
     vtep_ip: 192.168.254.3
-    evpn_services_l2_only: false
     tenants:
       Tenant_A:
         vrfs:
@@ -593,24 +596,24 @@ switch:
   uplink_type: p2p
   vtep: true
   ip_addressing:
-    router_id: designs/l3ls-evpn/ip-addressing/router-id.j2
-    mlag_ip_primary: designs/l3ls-evpn/ip-addressing/mlag-ip-primary.j2
-    mlag_ip_secondary: designs/l3ls-evpn/ip-addressing/mlag-ip-secondary.j2
-    mlag_l3_ip_primary: designs/l3ls-evpn/ip-addressing/mlag-l3-ip-primary.j2
-    mlag_l3_ip_secondary: designs/l3ls-evpn/ip-addressing/mlag-l3-ip-secondary.j2
-    p2p_uplinks_ip: designs/l3ls-evpn/ip-addressing/p2p-uplinks-ip.j2
-    p2p_uplinks_peer_ip: designs/l3ls-evpn/ip-addressing/p2p-uplinks-peer-ip.j2
-    vtep_ip_mlag: designs/l3ls-evpn/ip-addressing/vtep-ip-mlag.j2
-    vtep_ip: designs/l3ls-evpn/ip-addressing/vtep-ip.j2
+    router_id: ip_addressing/router-id.j2
+    mlag_ip_primary: ip_addressing/mlag-ip-primary.j2
+    mlag_ip_secondary: ip_addressing/mlag-ip-secondary.j2
+    mlag_l3_ip_primary: ip_addressing/mlag-l3-ip-primary.j2
+    mlag_l3_ip_secondary: ip_addressing/mlag-l3-ip-secondary.j2
+    p2p_uplinks_ip: ip_addressing/p2p-uplinks-ip.j2
+    p2p_uplinks_peer_ip: ip_addressing/p2p-uplinks-peer-ip.j2
+    vtep_ip_mlag: ip_addressing/vtep-ip-mlag.j2
+    vtep_ip: ip_addressing/vtep-ip.j2
   interface_descriptions:
-    underlay_ethernet_interfaces: designs/l3ls-evpn/interface-descriptions/underlay/ethernet-interfaces.j2
-    underlay_port_channel_interfaces: designs/l3ls-evpn/interface-descriptions/underlay/port-channel-interfaces.j2
-    connected_endpoints_ethernet_interfaces: designs/l3ls-evpn/interface-descriptions/connected-endpoints/ethernet-interfaces.j2
-    connected_endpoints_port_channel_interfaces: designs/l3ls-evpn/interface-descriptions/connected-endpoints/port-channel-interfaces.j2
-    overlay_loopback_interface: designs/l3ls-evpn/interface-descriptions/loopback-interfaces/overlay-loopback.j2
-    vtep_loopback_interface: designs/l3ls-evpn/interface-descriptions/loopback-interfaces/vtep-loopback.j2
-  underlay_routing_protocol: ebgp
-  overlay_routing_protocol: ebgp
+    underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
+    underlay_port_channel_interfaces: interface_descriptions/underlay/port-channel-interfaces.j2
+    mlag_ethernet_interfaces: interface_descriptions/mlag/ethernet-interfaces.j2
+    mlag_port_channel_interfaces: interface_descriptions/mlag/port-channel-interfaces.j2
+    connected_endpoints_ethernet_interfaces: interface_descriptions/connected_endpoints/ethernet-interfaces.j2
+    connected_endpoints_port_channel_interfaces: interface_descriptions/connected_endpoints/port-channel-interfaces.j2
+    overlay_loopback_interface: interface_descriptions/loopback_interfaces/overlay-loopback.j2
+    vtep_loopback_interface: interface_descriptions/loopback_interfaces/vtep-loopback.j2
   group: DC1_LEAF1
   id: 2
   mgmt_ip: 10.255.0.14/24
@@ -623,6 +626,9 @@ switch:
       non_mlag: 330
     feature_support:
       queue_monitor_length_notify: false
+  mgmt_interface: Management1
+  underlay_routing_protocol: ebgp
+  overlay_routing_protocol: ebgp
   filter_tenants:
   - all
   filter_tags:
@@ -660,6 +666,7 @@ switch:
   mlag_group: DC1_LEAF1
   mlag_ibgp_origin_incomplete: true
   mlag_peer_vlan: 4094
+  mlag_peer_link_allowed_vlans: 2-4094
   mlag_dual_primary_detection: false
   mlag_interfaces:
   - Ethernet3
@@ -676,7 +683,6 @@ switch:
   vtep_loopback_ipv4_pool: 192.168.254.0/24
   vtep_loopback: Loopback1
   vtep_ip: 192.168.254.3
-  evpn_services_l2_only: false
   tenants:
     Tenant_A:
       vrfs:
@@ -782,21 +788,21 @@ topology:
   - 310
   - 311
   - 350
-playbook_dir: /Users/tgrimonet/Projects/arista-community/ansible-avd-cloudvision-demo/playbooks
-ansible_playbook_python: /Users/tgrimonet/.pyenv/versions/3.9.7/envs/arista-avd-demo/bin/python3.9
-ansible_config_file: /Users/tgrimonet/Projects/arista-community/ansible-avd-cloudvision-demo/ansible.cfg
+playbook_dir: /Users/marsmith/git_projects/ansible-avd-cloudvision-demo/playbooks
+ansible_playbook_python: /Library/Developer/CommandLineTools/usr/bin/python3
+ansible_config_file: /Users/marsmith/git_projects/ansible-avd-cloudvision-demo/ansible.cfg
 groups:
   all:
   - cv_ztp
   - cv_server
   - DC1-SPINE1
   - DC1-SPINE2
+  - DC1-L2LEAF1A
+  - DC1-L2LEAF2A
   - DC1-LEAF1A
   - DC1-LEAF1B
   - DC1-LEAF2A
   - DC1-LEAF2B
-  - DC1-L2LEAF1A
-  - DC1-L2LEAF2A
   ungrouped: []
   CVP:
   - cv_ztp
@@ -813,12 +819,12 @@ groups:
   DC1_FABRIC:
   - DC1-SPINE1
   - DC1-SPINE2
+  - DC1-L2LEAF1A
+  - DC1-L2LEAF2A
   - DC1-LEAF1A
   - DC1-LEAF1B
   - DC1-LEAF2A
   - DC1-LEAF2B
-  - DC1-L2LEAF1A
-  - DC1-L2LEAF2A
   DC1_SPINES:
   - DC1-SPINE1
   - DC1-SPINE2
@@ -841,31 +847,31 @@ groups:
   DC1_L2LEAF2:
   - DC1-L2LEAF2A
   DC1_TENANTS_NETWORKS:
+  - DC1-L2LEAF1A
+  - DC1-L2LEAF2A
   - DC1-LEAF1A
   - DC1-LEAF1B
   - DC1-LEAF2A
   - DC1-LEAF2B
-  - DC1-L2LEAF1A
-  - DC1-L2LEAF2A
   DC1_SERVERS:
+  - DC1-L2LEAF1A
+  - DC1-L2LEAF2A
   - DC1-LEAF1A
   - DC1-LEAF1B
   - DC1-LEAF2A
   - DC1-LEAF2B
-  - DC1-L2LEAF1A
-  - DC1-L2LEAF2A
-omit: __omit_place_holder__977da4f00604c643da39a9f2175c10b09f0b2380
+omit: __omit_place_holder__1f98ecacc922faa19f867b13c00cc16b54b0ba5a
 ansible_version:
-  string: 2.10.14
-  full: 2.10.14
+  string: 2.12.1
+  full: 2.12.1
   major: 2
-  minor: 10
-  revision: 14
+  minor: 12
+  revision: 1
 ansible_check_mode: false
 ansible_diff_mode: false
 ansible_forks: 5
 ansible_inventory_sources:
-- /Users/tgrimonet/Projects/arista-community/ansible-avd-cloudvision-demo/inventory/inventory.yml
+- /Users/marsmith/git_projects/ansible-avd-cloudvision-demo/inventory/inventory.yml
 ansible_skip_tags: []
 ansible_run_tags:
 - build

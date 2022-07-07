@@ -1,6 +1,6 @@
 CVP_CONFIGLETS:
   DC1-AVD_DC1-L2LEAF1A: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-L2LEAF1A\n\
@@ -27,7 +27,7 @@ CVP_CONFIGLETS:
     \ api http-commands\n   protocol https\n   no shutdown\n   !\n   vrf MGMT\n  \
     \    no shutdown\n!\nend\n"
   DC1-AVD_DC1-L2LEAF2A: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-L2LEAF2A\n\
@@ -54,7 +54,7 @@ CVP_CONFIGLETS:
     \ api http-commands\n   protocol https\n   no shutdown\n   !\n   vrf MGMT\n  \
     \    no shutdown\n!\nend\n"
   DC1-AVD_DC1-LEAF1A: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-LEAF1A\n\
@@ -256,7 +256,7 @@ CVP_CONFIGLETS:
     \      redistribute connected\n!\nmanagement api http-commands\n   protocol https\n\
     \   no shutdown\n   !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   DC1-AVD_DC1-LEAF1B: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-LEAF1B\n\
@@ -458,7 +458,7 @@ CVP_CONFIGLETS:
     \      redistribute connected\n!\nmanagement api http-commands\n   protocol https\n\
     \   no shutdown\n   !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   DC1-AVD_DC1-LEAF2A: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-LEAF2A\n\
@@ -660,7 +660,7 @@ CVP_CONFIGLETS:
     \      redistribute connected\n!\nmanagement api http-commands\n   protocol https\n\
     \   no shutdown\n   !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   DC1-AVD_DC1-LEAF2B: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-LEAF2B\n\
@@ -862,7 +862,7 @@ CVP_CONFIGLETS:
     \      redistribute connected\n!\nmanagement api http-commands\n   protocol https\n\
     \   no shutdown\n   !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   DC1-AVD_DC1-SPINE1: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-SPINE1\n\
@@ -918,7 +918,7 @@ CVP_CONFIGLETS:
     \ activate\n!\nmanagement api http-commands\n   protocol https\n   no shutdown\n\
     \   !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   DC1-AVD_DC1-SPINE2: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec\
-    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
+    \ /usr/bin/TerminAttr -cvaddr=10.255.0.1:9910 -cvauth=key, -cvvrf=MGMT -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata\
     \ -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n\
     !\nvlan internal order ascending range 1006 1199\n!\ntransceiver qsfp default-mode\
     \ 4x10G\n!\nservice routing protocols model multi-agent\n!\nhostname DC1-SPINE2\n\
